@@ -12,8 +12,13 @@
 .container
 	.row.search-page
 		%h2 Found #{@politicians.total_entries} politician#{@politicians.size == 1 ? "" : "s"}
+		#politicians_list
+			= render :partial => "politicians/politicians_list" , :locals =>{ :politicians => @politicians}
 
-
-
-%h1 Politicians#index
-%p Find me in app/views/politicians/index.html.haml
+	.row
+		.col-lg-3
+		.col-lg-3
+			.load-more-posts.ajax_loading
+				-#<img src="/assets/ajax-loader.gif" alt="loading..."/>
+		.col-lg-3
+			=link_to 'Load More Politicians', politicians_path(:page => @politicians.next_page,:contest_type => @contest_type,:political_party_id =>  @political_party_id,:county_id => @county_id,:constituency_id => @constituency_id), :class => 'btn-u btn-u-blue load-more-posts', :remote => true if @politicians.next_page

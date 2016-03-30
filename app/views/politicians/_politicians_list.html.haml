@@ -1,0 +1,30 @@
+-if !@politicians.empty?
+	-@politicians.each_with_index do |politician, counter|
+		= raw (counter % 2 == 0) ? "<div class=\"row\">" : " "
+		.col-lg-6.booking-blocks
+			.pull-left.booking-img
+				=link_to politician do
+					-if politician.picture.nil?
+						= image_tag("missing.png") 
+					-else
+						= image_tag politician.picture
+
+				%ul.list-unstyled
+					%li
+						%i.icon-briefcase #{politician.surname} #{politician.other_name}
+					%li
+						%i.icon-map-marker #{politician.contest.name.to_s.titleize}, Kenya
+
+			%div{style: 'overflow:hidden;'}
+				%h2= link_to "#{politician.other_name.to_s.titleize}  #{politician.surname.to_s.titleize}  ", politician
+				%ul.list-unstyled.inline
+					%li 
+						%i.icon-start
+					%li 
+						%i.icon-start
+					%li 
+						%i.icon-start
+					%li 
+						%i.icon-start
+					%li 
+						%i.icon-start
