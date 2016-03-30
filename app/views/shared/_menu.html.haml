@@ -1,0 +1,28 @@
+-if user_signed_in?
+	.navbar.navbar-default{style: 'background: #3e4753 !important;'}
+		.container
+			.container-fluid
+				.navbar-header
+					=link_to root_path do
+						= image_tag ('politk_logo.png'), :height =>'50', :class=>'pull-left'
+				.collapse.navbar-collapse
+					%ul.nav.navbar-nav.navbar-right
+						%li= link_to 'Home', root_path
+						%li.dropdown
+							%a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+								Politicians
+								%span.caret
+							%ul.dropdown-menu
+								%li= link_to 'Presidential & Deputy', '/politicians?contest_type=1'
+								%li= link_to 'Governors', '/politicians?contest_type=2'
+								%li= link_to 'Senators', '/politicians?contest_type=3'
+								%li= link_to 'National Assembly Reps', '/politicians?contest_type=4'
+								%li= link_to 'Women Reps', '/politicians?contest_type=5'
+						%li= link_to 'Blog', '' 
+						%li.dropdown
+							%a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+								Me
+								%span.caret
+							%ul.dropdown-menu
+								%li= link_to 'Edit Profile', edit_user_registration_path
+								%li= link_to 'Log Out', destroy_user_session_path, method: :delete	

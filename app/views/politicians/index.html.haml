@@ -1,0 +1,19 @@
+=render 'shared/menu'
+.row.breadcrumbs.margin-bottom-40
+	.container
+		.pull-left
+			%h1= @page
+		%ul.pull-right.breadcrumb
+			%li= link_to 'Home', root_path
+			%span.divider
+			%li.active
+				Politicians Browse
+
+.container
+	.row.search-page
+		%h2 Found #{@politicians.total_entries} politician#{@politicians.size == 1 ? "" : "s"}
+
+
+
+%h1 Politicians#index
+%p Find me in app/views/politicians/index.html.haml

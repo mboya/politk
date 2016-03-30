@@ -1,0 +1,36 @@
+=render 'shared/menu'
+.container
+	.row
+		.col-md-3
+			.thumbnail
+				= image_tag current_user.avatar(:medium)
+				.caption{align: 'center'}
+					= current_user.names
+					%hr/
+					Member Since:
+					=time_ago_in_words(current_user.created_at)
+					Ago
+					%br/
+					.badge.badge-inverse
+						= current_user.followers(User).count
+					Follower(s)
+			.thumbnail
+				%h4 Latest Tweets
+				%hr/
+				%a.twitter-timeline{"data-widget-id" => "352263319354236928", :href => "https://twitter.com/Poltk"}
+				Tweets by @Poltk
+				:javascript
+					!function (d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + "://platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, "script", "twitter-wjs");
+		.col-md-6
+			-# placement of the public activity
+		.col-md-3
+			.thumbnail
+				one
