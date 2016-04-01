@@ -1,0 +1,61 @@
+
+/ === Breadcrumbs ===
+.row.breadcrumbs.margin-bottom-40
+  .container
+    %h1.pull-left F.A.Q's
+    %ul.pull-right.breadcrumb
+      %li
+        %a{:href => "/"} Home
+        %span.divider
+      %li.active F.A.Q's
+  / /container
+/ /breadcrumbs
+/ === End Breadcrumbs ===
+/ === Content Part ===
+.container
+  .row
+    .col-xs-12
+      / Other Questions
+      .headline
+        %h3 General Questions
+      / Accardion
+      #accordion2.accordion.acc-home.margin-bottom-40
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle.col-xs-12{"data-parent" => "#accordion2", "data-toggle" => "collapse", :href => "#collapseOne"}
+              1. Where does Politk get information about politicians?
+          #collapseOne.accordion-body.in.collapse{:style => "height: auto;"}
+            .accordion-inner
+              %p Politik is a platform that displays the information that is publicly available through government websites. Users can also edit the biographical information of any politician. We try to keep the information up-to-date but it might take a few days to do so.
+        / /accordion-group
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle.col-xs-12{"data-parent" => "#accordion2", "data-toggle" => "collapse", :href => "#collapseTwo"}
+              2. Why is there a section for posts by politicians?
+          #collapseTwo.accordion-body.collapse{:style => "height: 0px;"}
+            .accordion-inner
+              %p We hope that politicians will use Politk to interact with their constituents (or the public). Once the account is verified, Politicians can start posting on their profiles.
+        / /accordion-group
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle.col-xs-12{"data-parent" => "#accordion2", "data-toggle" => "collapse", :href => "#collapseThree"}
+              3. I am a politician. How do I verify my account?
+          #collapseThree.accordion-body.collapse{:style => "height: 0px;"}
+            .accordion-inner
+              %p Great! Please email us at info@politk.com and we can start the process.
+        / /accordion-group
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle.col-xs-12{"data-parent" => "#accordion2", "data-toggle" => "collapse", :href => "#collapseFour"}
+              4. I edited a politician’s profile. Why can’t I see the changes I made?
+          #collapseFour.accordion-body.collapse{:style => "height: 0px;"}
+            .accordion-inner
+              %p We try and make sure that the information provided is accurate and that means that we have to verify it. The process might take a few days.
+        / /accordion-group
+      / /accardion
+    / /span8
+    .col-lg-3
+    / /span4
+  / /row
+/ /container
+/ === End Content Part ===

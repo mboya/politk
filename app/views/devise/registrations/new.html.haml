@@ -20,6 +20,10 @@
                 %br/
                 = f.email_field :email, class: 'form-control'
               .form-group
+                = f.label :username
+                %br/
+                = f.text_field :username, autofocus: true, class: 'form-control'
+              .form-group
                 = f.label :password
                 - if @minimum_password_length
                   %em

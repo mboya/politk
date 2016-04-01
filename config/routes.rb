@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  get 'politicians/index'
+  get 'static/about'
+  get 'static/terms'
+  get 'static/policy'
+  get 'static/contact'
+  get 'static/faq'
 
+  get 'terms_of_service' => "static#terms_of_service"
+  get 'about_us' => "static#about_us"
+  get 'privacy_policy' => "static#privacy_policy"
+  get 'faq' => "static#faq"
+  get 'blog' => "static#blog"
+  
+  get 'politicians/index'
   get 'politicians/show'
 
   devise_for :admins

@@ -18,7 +18,7 @@
 								%li= link_to 'Senators', '/politicians?contest_type=3'
 								%li= link_to 'National Assembly Reps', '/politicians?contest_type=4'
 								%li= link_to 'Women Reps', '/politicians?contest_type=5'
-						%li= link_to 'Blog', '' 
+						%li= link_to 'Blog', 'https://medium.com/@mypolitk', target: '_blank' 
 						%li.dropdown
 							%a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
 								Me
@@ -26,3 +26,7 @@
 							%ul.dropdown-menu
 								%li= link_to 'Edit Profile', edit_user_registration_path
 								%li= link_to 'Log Out', destroy_user_session_path, method: :delete	
+	-if notice
+		%p.notice= notice
+	-if alert
+		%p.alert= alert
