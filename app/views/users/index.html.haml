@@ -1,0 +1,7 @@
+.container
+  .row
+    - @users.each do |user|
+      = user.username
+      = user.email
+      %button.btn.btn-info= link_to 'Follow'
+      %br

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
   get 'static/about'
   get 'static/terms'
   get 'static/policy'

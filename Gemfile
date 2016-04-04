@@ -23,6 +23,9 @@ group :development do
 end
 
 gem 'devise'
+
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+
 gem 'haml-rails', '~> 0.9.0'
 gem "erb2haml", :group => :development
 gem 'bootstrap-sass'
