@@ -65,5 +65,7 @@ class PoliticiansController < ApplicationController
   end
 
   def show
+    @politician = Politician.find(params[:id])
+    @post = Post.new
   end
 end
